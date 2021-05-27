@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tensorflow/tensorflow.dart';
-import 'dart:io';
 import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
 List<CameraDescription> cameras;
@@ -49,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   loadModel() async {
     await Tflite.loadModel(
-        model: "assets/model.tflite", labels: "assets/labels.txt");
+        model: "assets/model_unquant.tflite", labels: "assets/labels.txt");
   }
 
   runModel() async {
